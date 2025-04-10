@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-     <link rel="shortcut icon" type="port icon" href="image5.jpeg">
+    <link rel="shortcut icon" type="port icon" href="image5.jpeg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Debojyoti De Majumder | Portfolio</title>
     <style>
@@ -260,7 +260,132 @@
             display: flex;
             justify-content: center;
         }
+        .certifications {
+        padding: 100px 0;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(to bottom, var(--bg-secondary), var(--bg-primary));
+    }
 
+    .certifications::before {
+        content: '';
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(circle, var(--accent-primary), transparent);
+        filter: blur(120px);
+        opacity: 0.05;
+        top: -200px;
+        left: -200px;
+        z-index: 0;
+    }
+
+    /* Slider Container */
+    .slider-container {
+        position: relative;
+        z-index: 1;
+        margin-top: 40px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .certificate-slider {
+        display: flex;
+        gap: 20px;
+        animation: scroll 30s linear infinite;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-1000px); /* Adjust based on total width of certificates */
+        }
+    }
+
+    .certificate-slider:hover {
+        animation-play-state: paused;
+    }
+
+    /* Certificate Cards */
+    .certificate-item {
+        flex: 0 0 320px;
+    }
+
+    .certificate-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--glass-border);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 8px 32px var(--glass-shadow);
+        height: 100%;
+    }
+
+    .certificate-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .certificate-img {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .certificate-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s;
+    }
+
+    .certificate-card:hover img {
+        transform: scale(1.05);
+    }
+
+    .certificate-info {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .certificate-info h3 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .cert-issuer {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+    }
+
+    /* Clone certificates for infinite scroll effect */
+    @media (max-width: 768px) {
+        .certificate-item {
+            flex: 0 0 270px;
+        }
+        
+        .certificate-img {
+            height: 170px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .certificate-item {
+            flex: 0 0 240px;
+        }
+        
+        .certificate-img {
+            height: 150px;
+        }
+    }
         .hero-img-container {
             width: 280px;
             height: 280px;
@@ -991,7 +1116,7 @@
                     <h1>Hi, I'm <span>Debojyoti De Majumder</span></h1>
                     <p>A passionate AI & Data Science enthusiast building intelligent solutions.</p>
                     <div class="buttons">
-                        <button class="primary-btn"><a href="#contact">Contact Me</a></button>
+                        <button class="primary-btn">Contact Me</button>
                         <button class="secondary-btn"><a href="#projects">View Projects</a></button>
                     </div>
                 </div>
@@ -1093,7 +1218,6 @@
                 <li>Smart Maker's Festival – <span class="highlight">5 Project Showcases</span></li>
                 <li>DevFest AI 2024 – <span class="highlight">Ranked 35th out of 2000+ teams</span></li>
                 <li>IIT Tech Exhibition – <span class="highlight">Exhibitor</span></li>
-                <li>GSSOC – <span class="highlight">Contributor</span></li>
                 <li>IDE Bootcamp Ranchi – <span class="highlight">Rated 3.9/5</span> in Innovation & Entrepreneurship Bootcamp(IDE) Ranchi</li>
                 <li>Craft and Code Hackathon, IIIT Bhubaneswar – <span class="highlight">Reached State Level</span></li>
                 <li>Kshitij, IIT Kharagpur – <span class="highlight">Finalist</span> in B-Plan Event</li>
@@ -1195,7 +1319,102 @@
         </div>
       </section>
       
-
+      <section class="certifications" id="certifications">
+        <div class="container">
+            <h2 class="section-title">Licenses & Certifications</h2>
+            
+            <div class="slider-container">
+                <div class="certificate-slider">
+                    <!-- Certificate 1 -->
+                    <div class="certificate-item">
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <img src="Copy of Coursera BGT4S003LQR7_page-0001.jpg" alt="Machine Learning Specialization">
+                            </div>
+                            <div class="certificate-info">
+                                <h3>Foundation of Project Management</h3>
+                                <p class="cert-issuer">Coursera & Google</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Certificate 2 -->
+                    <div class="certificate-item">
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <img src="Coursera NDKUFFFMFLYS_page-0001.jpg" alt="Deep Learning Fundamentals">
+                            </div>
+                            <div class="certificate-info">
+                                <h3>AI For Everyone</h3>
+                                <p class="cert-issuer">DeepLearning.AI</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Certificate 3 -->
+                    <div class="certificate-item">
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <img src="Copy of Coursera FO6HLEW6Q3XM_page-0001.jpg" alt="Data Science Professional">
+                            </div>
+                            <div class="certificate-info">
+                                <h3>Data Science Methodology</h3>
+                                <p class="cert-issuer">IBM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Certificate 4 -->
+                    <div class="certificate-item">
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <img src="Copy of Coursera XAVAOH6OAQSB_page-0001.jpg" alt="Computer Vision with TensorFlow">
+                            </div>
+                            <div class="certificate-info">
+                                <h3>Data Science Fundamentals</h3>
+                                <p class="cert-issuer">IBM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="certificate-item">
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <img src="Copy of Coursera XAVAOH6OAQSB_page-0001.jpg" alt="Computer Vision with TensorFlow">
+                            </div>
+                            <div class="certificate-info">
+                                <h3>Innovating with Google Cloud AI</h3>
+                                <p class="cert-issuer">Google Cloud</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="certificate-item">
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <img src="r6WXBsEm+4pSMiqQaMvc9RRpAVoY4I172ic7O5I_iU0=.png" alt="Computer Vision with TensorFlow">
+                            </div>
+                            <div class="certificate-info">
+                                <h3>Basics of Google Cloud Computee</h3>
+                                <p class="cert-issuer">Google Cloud</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Certificate 5 -->
+                    <div class="certificate-item">
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <img src="Copy of Coursera WOR7P9EHDX8I_page-0001.jpg" alt="NLP with PyTorch">
+                            </div>
+                            <div class="certificate-info">
+                                <h3>Data Scientist Career Guide</h3>
+                                <p class="cert-issuer">IBM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
@@ -1238,6 +1457,8 @@
             </div>
         </div>
     </section>
+<!-- Licenses & Certifications Section -->
+
 
     <!-- Footer -->
     <footer>
@@ -1253,6 +1474,34 @@
     </footer>
 
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const slider = document.querySelector('.certificate-slider');
+        
+        // Clone certificates for infinite scroll
+        const certificates = document.querySelectorAll('.certificate-item');
+        certificates.forEach(certificate => {
+            const clone = certificate.cloneNode(true);
+            slider.appendChild(clone);
+        });
+        
+        // Adjust animation distance based on total width
+        function updateScrollDistance() {
+            const totalWidth = slider.scrollWidth / 2;
+            document.documentElement.style.setProperty('--scroll-width', `-${totalWidth}px`);
+        }
+        
+        // Update on load and resize
+        updateScrollDistance();
+        window.addEventListener('resize', updateScrollDistance);
+        
+        // Reset animation when it completes
+        slider.addEventListener('animationiteration', () => {
+            slider.style.animation = 'none';
+            setTimeout(() => {
+                slider.style.animation = 'scroll 30s linear infinite';
+            }, 10);
+        });
+    });
         // Hamburger Menu Toggle
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.querySelector('.nav-links');
@@ -1276,6 +1525,7 @@
         });
 
         hamburger.classList.add('open');
+
     </script>
 
     <style>
