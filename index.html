@@ -32,13 +32,22 @@
             background-color: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.6;
-            background-image: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(0, 0, 0, 0.02) 10px,
-                rgba(0, 0, 0, 0.02) 20px
-            );
+            background-image:
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0, 102, 204, 0.03) 2px,
+                    rgba(0, 102, 204, 0.03) 4px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0, 102, 204, 0.03) 2px,
+                    rgba(0, 102, 204, 0.03) 4px
+                );
+            background-size: 50px 50px;
         }
 
         a {
@@ -837,6 +846,215 @@
             font-family: 'Arial Black', 'Arial Bold', Arial, sans-serif;
         }
 
+        /* 90s Code Block Styling */
+        .code-block {
+            background: #000;
+            color: #00ff00;
+            padding: 20px;
+            border: 5px solid var(--border-color);
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            box-shadow: 8px 8px 0px var(--shadow-color);
+            position: relative;
+        }
+
+        .code-block::before {
+            content: 'C:\\PORTFOLIO\\INFO.EXE';
+            position: absolute;
+            top: -30px;
+            left: 0;
+            background: #c0c0c0;
+            color: #000;
+            padding: 5px 15px;
+            border: 3px solid #000;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .code-line {
+            margin: 5px 0;
+        }
+
+        .code-comment {
+            color: #888;
+        }
+
+        .code-keyword {
+            color: #00ffff;
+        }
+
+        .code-string {
+            color: #ffff00;
+        }
+
+        /* Blinking cursor */
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 16px;
+            background: #00ff00;
+            animation: blink 1s infinite;
+            margin-left: 2px;
+        }
+
+        /* Under Construction Banner */
+        .construction-banner {
+            background: repeating-linear-gradient(
+                45deg,
+                #ffff00,
+                #ffff00 20px,
+                #000 20px,
+                #000 40px
+            );
+            padding: 10px;
+            text-align: center;
+            border: 5px solid #000;
+            margin: 20px 0;
+            box-shadow: 8px 8px 0px var(--shadow-color);
+            animation: slideConstruction 2s linear infinite;
+        }
+
+        @keyframes slideConstruction {
+            0% { background-position: 0 0; }
+            100% { background-position: 40px 0; }
+        }
+
+        .construction-banner h3 {
+            color: #ff0000;
+            font-weight: 900;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 0 #000, -1px -1px 0 #fff;
+            margin: 0;
+        }
+
+        /* Visitor Counter */
+        .visitor-counter {
+            background: #000;
+            color: #00ff00;
+            padding: 15px 30px;
+            border: 5px solid var(--border-color);
+            display: inline-block;
+            font-family: 'Courier New', monospace;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 8px 8px 0px var(--shadow-color);
+            margin: 20px 0;
+        }
+
+        .visitor-counter span {
+            color: #ff0000;
+            font-size: 24px;
+        }
+
+        /* Scrolling Text */
+        .scrolling-text {
+            background: #0066cc;
+            color: #fff;
+            padding: 10px;
+            border: 4px solid #000;
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 20px 0;
+            box-shadow: 6px 6px 0px var(--shadow-color);
+        }
+
+        .scrolling-text span {
+            display: inline-block;
+            animation: scroll-left 20s linear infinite;
+            font-weight: 900;
+            font-size: 18px;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Retro Button Styles */
+        .retro-badge {
+            background: linear-gradient(135deg, #ff0000, #ff6600);
+            color: #fff;
+            padding: 8px 20px;
+            border: 4px solid #000;
+            font-weight: 900;
+            text-transform: uppercase;
+            display: inline-block;
+            transform: rotate(-5deg);
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.3);
+            margin: 5px;
+        }
+
+        /* Matrix Effect Background */
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.03;
+        }
+
+        /* NEW/HOT badges */
+        .new-badge {
+            display: inline-block;
+            background: #ff0000;
+            color: #ffff00;
+            padding: 4px 12px;
+            border: 3px solid #000;
+            font-weight: 900;
+            font-size: 12px;
+            transform: rotate(-10deg);
+            animation: blinkBadge 1s infinite;
+            margin-left: 10px;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+        }
+
+        @keyframes blinkBadge {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0.3; }
+        }
+
+        /* Pixel Art Divider */
+        .pixel-divider {
+            height: 20px;
+            background: repeating-linear-gradient(
+                90deg,
+                #0066cc 0px,
+                #0066cc 10px,
+                #ff6600 10px,
+                #ff6600 20px,
+                #009900 20px,
+                #009900 30px
+            );
+            border-top: 4px solid #000;
+            border-bottom: 4px solid #000;
+            margin: 30px 0;
+        }
+
+        /* Glowing Text Effect */
+        .glow-text {
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0066cc, 0 0 20px #0066cc;
+            }
+            50% {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0066cc, 0 0 40px #0066cc;
+            }
+        }
+
         /* Footer */
         footer {
             padding: 50px 0;
@@ -993,6 +1211,11 @@
     </style>
 </head>
 <body>
+    <!-- Top Banner -->
+    <div style="background: #000; color: #00ff00; text-align: center; padding: 5px; font-family: 'Courier New', monospace; font-size: 12px; border-bottom: 3px solid #00ff00;">
+        <span style="animation: blink 1s infinite;">⚠️</span> BEST VIEWED IN 1024x768 | JAVASCRIPT ENABLED | CIRCA 2025 <span style="animation: blink 1s infinite;">⚠️</span>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container">
@@ -1018,10 +1241,22 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
+            <!-- Visitor Counter -->
+            <div style="text-align: center; margin-bottom: 20px;">
+                <div class="visitor-counter">
+                    👁️ VISITORS: <span id="visitor-count">001337</span> 👁️
+                </div>
+            </div>
+
             <div style="text-align: center; margin-bottom: 40px;">
                 <div style="display: inline-block; background: linear-gradient(45deg, #0066cc, #ff6600, #009900); padding: 15px 60px; border: 8px solid #000; box-shadow: 10px 10px 0 rgba(0,0,0,0.3); transform: rotate(-2deg);">
                     <h2 style="font-size: 3rem; font-weight: 900; color: #fff; text-transform: uppercase; letter-spacing: 8px; margin: 0; text-shadow: 4px 4px 0 #000;">WELCOME!</h2>
                 </div>
+            </div>
+
+            <!-- Scrolling Marquee -->
+            <div class="scrolling-text">
+                <span>⭐ BEST VIEWED IN NETSCAPE NAVIGATOR ⭐ AI & DATA SCIENCE PORTFOLIO ⭐ NOW WITH 100% MORE RETRO! ⭐</span>
             </div>
             <div class="hero-content">
                 <div class="hero-left">
@@ -1044,15 +1279,35 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <div class="pixel-divider"></div>
+            <h2 class="section-title">About Me<span class="new-badge">NEW!</span></h2>
             <div class="about-content">
                 <div class="about-img">
                     <img src="image.jpg" alt="Profile Image">
                 </div>
                 <div class="about-text">
                     <h3>AI & Data Science Enthusiast</h3>
+
+                    <!-- Code Block -->
+                    <div class="code-block" style="margin: 20px 0;">
+                        <div class="code-line"><span class="code-comment">// Quick Stats</span></div>
+                        <div class="code-line"><span class="code-keyword">const</span> student = {</div>
+                        <div class="code-line">&nbsp;&nbsp;name: <span class="code-string">"Debojyoti De Majumder"</span>,</div>
+                        <div class="code-line">&nbsp;&nbsp;location: <span class="code-string">"Kolkata, India"</span>,</div>
+                        <div class="code-line">&nbsp;&nbsp;education: [<span class="code-string">"IEM"</span>, <span class="code-string">"IIT Patna"</span>],</div>
+                        <div class="code-line">&nbsp;&nbsp;passion: <span class="code-string">"AI & ML"</span>,</div>
+                        <div class="code-line">&nbsp;&nbsp;status: <span class="code-string">"Building the future!"</span></div>
+                        <div class="code-line">};<span class="cursor"></span></div>
+                    </div>
+
                     <p>Hello! I'm a Computer Science student with a focus on Artificial Intelligence and Data Analytics. I'm currently pursuing my B.Tech in CSE with AI specialization at Institute of Engineering and Management, Kolkata, while also studying Computer Science and Data Analytics at IIT Patna.</p>
                     <p>I'm passionate about machine learning, data visualization, and developing innovative AI solutions. My dual education provides me with a strong foundation in both theoretical concepts and practical applications in the field of AI and data science.</p>
+
+                    <div style="margin-top: 20px;">
+                        <span class="retro-badge">🔥 HOT!</span>
+                        <span class="retro-badge">💯 CERTIFIED</span>
+                        <span class="retro-badge">⚡ FAST</span>
+                    </div>
                     <div class="skills">
                         <div class="skill">Python</div>
                         <div class="skill">Machine Learning</div>
@@ -1076,7 +1331,8 @@
     <!-- Education Section with Added Schools - Alternating Timeline -->
 <section class="education" id="education">
     <div class="container">
-        <h2 class="section-title">Education</h2>
+        <div class="pixel-divider"></div>
+        <h2 class="section-title">Education<span class="new-badge">HOT!</span></h2>
         <div class="education-timeline">
             <div class="education-item">
                 <div class="education-content">
@@ -1121,7 +1377,8 @@
     <!-- Achievements Section -->
     <section class="achievements" id="achievements">
         <div class="container">
-          <h2 class="section-title">Experience</h2>
+          <div class="pixel-divider"></div>
+          <h2 class="section-title">Experience<span class="new-badge">⭐ FEATURED</span></h2>
           <div class="achievements-container">
             
             <div class="achievement-item">
@@ -1165,7 +1422,26 @@
     <!-- Projects Section -->
     <section class="projects" id="projects">
         <div class="container">
-          <h2 class="section-title">Undergoing Projects</h2>
+          <!-- Under Construction Banner -->
+          <div class="construction-banner" style="margin-bottom: 30px;">
+              <h3>🚧 PROJECTS UNDER ACTIVE DEVELOPMENT 🚧</h3>
+          </div>
+
+          <h2 class="section-title">Undergoing Projects<span class="new-badge">COOL!</span></h2>
+
+          <!-- ASCII Art -->
+          <div class="code-block" style="margin: 30px auto; max-width: 500px; text-align: center;">
+              <pre style="margin: 0; line-height: 1.2; font-size: 11px;">
+   _____ ____  ____  ______
+  / ___// __ \/ __ \/ ____/
+  \__ \/ / / / / / / __/
+ ___/ / /_/ / /_/ / /___
+/____/\____/\____/_____/
+
+ CUTTING EDGE PROJECTS!
+              </pre>
+          </div>
+
           <div class="project-grid">
             
             <!-- Project 1: MindPal -->
@@ -1240,7 +1516,8 @@
       
       <section class="certifications" id="certifications">
         <div class="container">
-            <h2 class="section-title">Licenses & Certifications</h2>
+            <div class="pixel-divider"></div>
+            <h2 class="section-title">Licenses & Certifications<span class="new-badge">VERIFIED</span></h2>
             
             <div class="slider-container">
                 <div class="certificate-slider">
@@ -1338,6 +1615,15 @@
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
+
+            <!-- Terminal-style notice -->
+            <div class="code-block" style="margin: 30px auto; max-width: 600px;">
+                <div class="code-line"><span class="code-comment">// System Status</span></div>
+                <div class="code-line">> Checking connection... <span class="code-keyword">OK</span></div>
+                <div class="code-line">> Email server status... <span class="code-keyword">ONLINE</span></div>
+                <div class="code-line">> Ready to receive messages... <span class="code-keyword">YES</span></div>
+                <div class="code-line">> Response time... <span class="code-string">"24 hours"</span><span class="cursor"></span></div>
+            </div>
             <div class="contact-content">
                 <div class="contact-info">
                     <p>I'm currently looking for internship opportunities in AI, Machine Learning, and Data Science. Feel free to reach out if you have any opportunities or just want to connect with a fellow tech enthusiast!</p>
@@ -1395,18 +1681,101 @@
     <!-- Footer -->
     <footer>
         <div class="container">
+            <!-- Retro Badges Row -->
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="https://via.placeholder.com/88x31/0066cc/ffffff?text=HTML" alt="HTML" style="margin: 5px; border: 2px solid #000;">
+                <img src="https://via.placeholder.com/88x31/ff6600/ffffff?text=CSS3" alt="CSS" style="margin: 5px; border: 2px solid #000;">
+                <img src="https://via.placeholder.com/88x31/009900/ffffff?text=JS" alt="JS" style="margin: 5px; border: 2px solid #000;">
+                <img src="https://via.placeholder.com/88x31/cc0000/ffffff?text=AI+POWERED" alt="AI" style="margin: 5px; border: 2px solid #000;">
+            </div>
+
+            <div class="scrolling-text" style="margin-bottom: 20px;">
+                <span>🌟 THANK YOU FOR VISITING! 🌟 REMEMBER TO BOOKMARK THIS PAGE! 🌟 PROUDLY MADE IN 2025 WITH 90s SPIRIT! 🌟</span>
+            </div>
+
             <div class="social-links">
                 <a href="https://x.com/MajumderDe14126?t=heS_ij9QBtK8454D6Sb2bQ&s=09" target="_blank">X</a>
                 <a href="https://www.instagram.com/debrjyoti?igsh=MWtkcWNzajJnMmg2Yw==" target="_blank">IG</a>
                 <a href="https://www.linkedin.com/in/debojyoti-de-majumder-48052b30b/" target="_blank">LI</a>
                 <a href="https://github.com/debojyoti10CC" target="_blank">GH</a>
             </div>
+
+            <div style="margin: 20px 0;">
+                <div class="visitor-counter" style="margin: 10px;">
+                    ⏰ LAST UPDATED: <span>OCT 2025</span>
+                </div>
+            </div>
+
             <p class="copyright">© 2025 Debojyoti De Majumder. All Rights Reserved.</p>
+            <p style="font-family: 'Courier New', monospace; font-size: 12px; color: #666; margin-top: 10px;">
+                [ This site is best viewed at 1024x768 resolution ]<br>
+                [ Optimized for Netscape Navigator 4.0+ and Internet Explorer 5.0+ ]
+            </p>
         </div>
     </footer>
 
     <script>
+        // Visitor Counter Animation
+        function animateCounter() {
+            const counter = document.getElementById('visitor-count');
+            if (counter) {
+                let count = 1337;
+                setInterval(() => {
+                    count++;
+                    counter.textContent = String(count).padStart(6, '0');
+                }, 3000);
+            }
+        }
+
+        // Matrix Rain Effect (Easter Egg)
+        function createMatrixRain() {
+            const chars = '01アイウエオカキクケコサシスセソタチツテト';
+            const body = document.body;
+
+            setInterval(() => {
+                const span = document.createElement('span');
+                span.textContent = chars[Math.floor(Math.random() * chars.length)];
+                span.style.position = 'fixed';
+                span.style.left = Math.random() * window.innerWidth + 'px';
+                span.style.top = '-20px';
+                span.style.color = '#00ff00';
+                span.style.fontSize = '20px';
+                span.style.fontFamily = 'monospace';
+                span.style.opacity = '0.3';
+                span.style.zIndex = '-1';
+                span.style.pointerEvents = 'none';
+                body.appendChild(span);
+
+                let pos = -20;
+                const fall = setInterval(() => {
+                    pos += 5;
+                    span.style.top = pos + 'px';
+                    if (pos > window.innerHeight) {
+                        clearInterval(fall);
+                        span.remove();
+                    }
+                }, 50);
+            }, 300);
+        }
+
+        // Easter egg: Konami code
+        let konamiCode = [];
+        const konamiPattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.key);
+            if (konamiCode.length > konamiPattern.length) {
+                konamiCode.shift();
+            }
+            if (JSON.stringify(konamiCode) === JSON.stringify(konamiPattern)) {
+                alert('🎮 KONAMI CODE ACTIVATED! 🎮\\n\\n You found the secret! You are a true 90s kid!');
+                createMatrixRain();
+            }
+        });
+
         document.addEventListener('DOMContentLoaded', function() {
+        animateCounter();
+
         const slider = document.querySelector('.certificate-slider');
         
         // Clone certificates for infinite scroll
